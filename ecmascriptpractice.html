@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecma script</title>
+</head>
+<body>
+    <script>
+        // object shorthand properties
+        // let name="bilal";
+        // let age=19;
+        // let student=true;
+        // const person={name,age,student};
+        // console.log(person);
+
+        // destructruing array
+        // let arr=[1,2,3,4,5];
+        // // let [first,second,third,fourth,fifth]=arr;
+        // // console.log(first,second,third,fifth,fourth);
+
+        // // ignoring elements
+        // let [,,,four,five]=arr;
+        // console.log(four,five);
+
+        // // swap two numbers without using third elements
+        // let a=10;
+        // let b=20;
+        // [a,b]=[b,a];
+        // console.log(a,b);
+
+        // // destructruing object
+        // let students={
+        //     name:"bilal",
+        //     age:19,
+        //     isStudent:false
+        // };
+        // let {name,age,isStudent:uniStudent}=students;
+        // console.log(uniStudent,name,age);
+
+        // // spread operator
+        // // copying an array
+        // let fruits=["mango","banana","grapes","apple"];
+        // let newFruits=[...fruits];
+        // console.log(newFruits);
+        
+        // // concatenate array
+        // let carNames1=["swift","bmw","ferrari","porche"];
+        // let carPrice=["10000000","9080899","98923934"];
+        // let carDetails=[...carNames1,...carPrice];
+        // console.log(carDetails);
+
+        // //adding value an existing array
+        // fruits.push(...["guava","pineapple"]);
+        // console.log(fruits);
+
+        // //using spread you can split string
+        // let fullName="bilal ahmed";
+        // console.log([...fullName]);
+
+        // function sum(...numbers){
+        // return numbers.reduce((accum,curVal)=>accum+curVal,0);
+        // }
+        // console.log(sum(1,2,3,4,5,6,7,8,9,10));
+        
+        // // array flat
+        // const nestedArray1 = [1, [2, [3, [4]]], 5];
+        // console.log(nestedArray1.flat(3));
+        // const arr1 = ["My name", "is vinod", "thapa"];
+        // const result=arr1.flatMap((curVal)=>[curVal.split(" ")]);
+        // console.log(result.flat());
+        // console.log(arr1);
+        
+        // // object fromentries
+        // const person = { name: "vinod", age: 30 };
+        // const entries = Object.entries(person);
+        // console.log(entries);
+        
+        // const newPerson = Object.fromEntries(entries);
+        // console.log(newPerson);
+
+        // bigint
+        // let num=BigInt("02392839732978468277320");
+        // console.log(num);
+        // let newNum=num+1n;
+        // console.log(newNum);
+
+        // nullish colesion operator
+        // let result=0;
+        // console.log(result??10);
+
+        let person={
+            name:"bilal ahmed",
+            address:{
+                city:0,
+                postalCode:"65200",
+            }
+        };
+        const city=person.address?.city??"city is not exist";
+        console.log(city);
+
+    </script>
+</body>
+</html>

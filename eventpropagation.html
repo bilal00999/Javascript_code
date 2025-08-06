@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event propagation</title>
+</head>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10rem;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        .outer{
+            width: 50rem;
+            height: 40rem;
+            background-color: green;
+            font-size: 2rem;
+            color: white;
+            padding: 5rem;
+            text-align: center;
+
+        }
+        .middle{
+            width: 40rem;
+            height: 30rem;
+            background-color: red;
+            font-size: 2rem;
+            color: white;
+            padding: 5rem;
+        }
+        .inner{
+            width: 30rem;
+            height: 20rem;
+            background-color: blue;
+            font-size: 2rem;
+            color: white;
+            padding: 5rem;
+        }
+    </style>
+<body>
+    <div class="outer">
+        <p>outer div</p>
+        <div class="middle">
+            <p>middle div</p>
+            <div class="inner"><p>inner div</p></div>
+        </div>
+    </div>
+
+    <script>
+
+        function callOuter(event){
+            console.table([
+            {
+                name:"outer",
+                description:"i am outer one",
+                target:event.target,
+                curTarget:event.currentTarget,
+            }
+        ]);
+        event.stopPropagation();
+        }
+        let outer=document.querySelector(".outer");
+        outer.addEventListener("click",callOuter);
+
+        function callMiddle(event){
+            console.table([
+            {
+                name:"middle",
+                description:"i am middle one",
+                target:event.target,
+                curTarget:event.currentTarget,
+            }
+        ]);
+        event.stopPropagation();
+        }
+        let middle=document.querySelector(".middle");
+        middle.addEventListener("click",callMiddle);
+
+        function callInner(event){
+            console.table([
+            {
+                name:"inner",
+                description:"i am inner one",
+                target:event.target,
+                curTarget:event.currentTarget,
+            }
+        ]);
+        event.stopPropagation();
+        }
+        let inner=document.querySelector(".inner");
+        inner.addEventListener("click",callInner);
+    </script>
+</body>
+</html>

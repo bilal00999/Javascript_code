@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higher function</title>
+</head>
+<body>
+    
+    <script>
+        // first class function
+
+        function printName(name){
+            return "i am "+name;
+        }
+
+        let func=printName;
+        console.log(func("bilal ahmed"));
+
+        // higher order function and call back function
+        function studentData(name,age,isStudent,collegeName,college){
+            console.log(`My name ${name} and age is ${age} isStudent ${isStudent}`);
+            college(collegeName);
+
+        }
+        function college(collegeName){ //college function is a call back function bc studentData pass college function as an argument and call it
+            console.log("college name "+collegeName);
+        }
+
+        studentData("bilal ahmed",19,true,"kfueit",college); //studentData is a higher order function bc it accept college function as an argument
+
+
+        // practice question
+        function mathOperation(x,y,operation){
+           return operation(x,y);
+        }
+        function sum(x,y){
+            return `sum of two ${x} and ${y} is ${x+y}`;
+        }
+        function sub(x,y){
+            return `difference of two ${x} and ${y} is ${x-y}`;
+        }
+        
+
+        console.log(mathOperation(20,10,sum));
+        console.log(mathOperation(40,10,sub));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Delegation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        *{
+            font-size: 62.5%;
+            color: white;
+        }
+    
+        .heading{
+            font-size: 2rem;
+        }
+        .mylist{
+            list-style: none;
+            
+        }
+        .mylist li{
+            font-size: 1.8rem;
+            padding: 1rem;
+            border: 2px solid white;
+            margin: 1rem;
+        }
+        .listvalue{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="heading">Which programming language you like most?</p>
+        <br>
+        <ul class="mylist">
+            <li>javascript</li>
+            <li>css/html</li>
+            <li>java</li>
+            <li>sql</li>
+        </ul>
+        <br>
+        <p class="listvalue"></p>
+    </div>
+
+    <script>
+        let mylist=document.querySelector(".mylist");
+
+        function displayCurVlaue(event){
+            let listvalue=document.querySelector(".listvalue");
+            listvalue.innerHTML=`your favourite programming language is ${event.target.textContent}`;
+        }
+        mylist.addEventListener("click",displayCurVlaue);
+    </script>
+</body>
+</html>

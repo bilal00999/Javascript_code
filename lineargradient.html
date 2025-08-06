@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linear gradient</title>
+    <style>
+        body{
+            
+            background-image: linear-gradient(to right, rgb(7, 134, 17), rgb(0, 255, 157));
+            
+            .main{
+                margin-top: 15%;
+                margin-left: 40%;
+            }
+            .display{
+                width: 300px;
+                height: auto;
+                background-color: white;
+                opacity: 0.5;
+                padding: 10px;
+                border-radius: 10px;
+                border-left:8px solid black;
+                margin: 20px;
+                
+            }
+            .para{
+                opacity: 1;
+                font-size: 16px;
+            }
+            .btn1{
+                width: 150px;
+                height: 50px;
+                background-color: rgb(7, 134, 17);
+                border-radius: 20px;
+                border: 2px solid rgb(7, 134, 17);
+            }
+            .btn2{
+                width: 150px;
+                height: 50px;
+                background-color: rgb(0, 255, 157);
+                border: 2px solid rgb(0, 255, 157) ;
+                border-radius: 20px;
+            }
+            .buttons{
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="buttons">
+            <button class="btn1">#0F4A58</button>
+            <button class="btn2">#0D4E94</button>
+        </div>
+        <div class="display">
+            <p class="para">background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</p>
+        </div>
+    </section>
+
+
+    <script>
+        let btn1=document.querySelector(".btn1");
+        let btn2=document.querySelector(".btn2");
+        let displayGradient=document.querySelector(".para");
+        let copyClipboard=document.querySelector(".display");
+        // console.log(backgroundImage);
+
+        let linearGradient=" background-image: linear-gradient(to right, rgb(7, 134, 17), rgb(0, 255, 157));";
+
+        function genHexValue(){
+            let hexValue="0123456789abcdef";
+            var result="#";
+            for(let x=0;x<6;x++){
+                result=result+hexValue[Math.floor(Math.random()*16)];
+            
+            }
+            return result;
+        }
+
+        let btn1Value="#0F4A58";
+        let btn2value="#0D4E94";
+        btn1.addEventListener("click",()=>{
+            btn1Value=genHexValue();
+            btn1.textContent=btn1Value;
+            document.body.style.backgroundImage=`linear-gradient(to right, ${btn1Value}, ${btn2value}`;
+            displayGradient.textContent=`background-image: linear-gradient(to right, ${btn1Value}, ${btn2value});`;
+            btn1.style.backgroundColor=btn1Value;
+
+        });
+        btn2.addEventListener("click",()=>{
+            btn2value=genHexValue();
+            btn2.textContent=btn2value;
+            document.body.style.backgroundImage=`linear-gradient(to right, ${btn1Value}, ${btn2value}`;
+            displayGradient.textContent=`background-image: linear-gradient(to right, ${btn1Value}, ${btn2value});`;
+            btn2.style.backgroundColor=btn2value;
+        });
+
+        copyClipboard.addEventListener("click",()=>{
+            navigator.clipboard.writeText(displayGradient.innerText);
+            alert("copied text");
+        })
+
+        const user = { name: "Bilal", age: 21 };
+const jsonString = JSON.stringify(user);
+console.log(jsonString);  // Output: {"name":"Bilal","age":21}
+
+        
+    </script>
+</body>
+</html>

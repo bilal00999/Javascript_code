@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --main-color: #9333ea;
+}
+.header {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 8rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.logo h1 {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+.add_newNote_btn {
+  width: 14rem;
+  height: 4rem;
+  border: none;
+  background-color: var(--main-color);
+  border-radius: 1rem;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.plus_icon {
+  margin-right: 1rem;
+}
+.main {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 8rem;
+}
+.search {
+  width: 100%;
+  height: 4rem;
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  border: 2px solid gray;
+}
+
+.serach_icon {
+  position: relative;
+  top: 2.8rem;
+  left: 1.5rem;
+  font-size: 1.6rem;
+  color: gray;
+}
+.main_content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no_notes {
+  place-items: center;
+}
+.no_note_heading {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.no_note_para {
+  font-size: 1.6rem;
+  color: gray;
+}
+.notebook_icon {
+  width: 10rem;
+  aspect-ratio: 1;
+  background-color: #d9bbf5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  transition: scale 0.5s ease-in-out;
+}
+.notebook_icon i {
+  font-size: 6rem;
+  color: #9333ea;
+}
+.notebook_icon:hover {
+  scale: 1.1;
+}
+.create_notes_main {
+  margin-top: 4rem;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(212, 208, 208);
+  border-radius: 1rem;
+}
+.create_notes_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(212, 208, 208);
+  padding: 2rem;
+}
+.create_notes_left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.create_notes_left p {
+  font-size: 1.6rem;
+}
+.add_image {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.image_icon {
+  margin-right: 1rem;
+}
+.write_notes_title {
+  margin: 1rem 0 1rem 0;
+  border-bottom: 1px solid rgba(212, 208, 208, 0.4);
+}
+.note_title {
+  width: 100%;
+  height: 5rem;
+  border: none;
+  padding: 2rem;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.note_title:focus {
+  outline: none;
+}
+.write_notes_text {
+  margin-bottom: 1rem;
+}
+
+.note_text {
+  width: 100%;
+  height: 20rem;
+  border: none;
+  padding: 2rem;
+  font-size: 1.6rem;
+}
+.note_text:focus {
+  outline: none;
+}
+.create_note_button {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  border-top: 1px solid rgb(212, 208, 208);
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  background-color: #f9fafb;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.cancel_btn {
+  background-color: #ffffff;
+  border: none;
+  width: 8rem;
+  height: 4rem;
+  border: 1px solid rgb(212, 208, 208);
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.save_btn {
+  width: 12rem;
+  height: 4rem;
+  border: none;
+  background-color: var(--main-color);
+  color: #ffffff;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-style: italic;
+}
+.images_div img {
+  width: 20rem;
+  aspect-ratio: 1;
+  margin: 0.5rem;
+}
+
+/* show cards style */
+.show_notes_cards {
+  width: 100%;
+  height: auto;
+  padding: 4rem 0 0 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card {
+  width: 35rem;
+  height: 16rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.card_title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.card_text {
+  font-size: 1.6rem;
+  margin: 2rem 0 1rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card_image {
+  margin-bottom: 1rem;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.date_time {
+  position: relative;
+  top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.edit_delete {
+  font-size: 1.6rem;
+  display: flex;
+  gap: 1rem;
+}
+.edit_icon {
+  color: var(--main-color);
+  cursor: pointer;
+}
+.delete_icon {
+  color: rgb(250, 87, 87);
+  cursor: pointer;
+}

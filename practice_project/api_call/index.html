@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>api call</title>
+  </head>
+  <body>
+    <div class="main"></div>
+    <script>
+      let main = document.querySelector(".main");
+      const xhrUrl = "https://api.github.com/users/bilal00999";
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", xhrUrl);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.response);
+          console.log(data);
+
+          main.innerHTML = `
+        <img src="${data.avatar_url}" alt="">
+        <h1>${data.name}</h1>
+        <h3>Followers ${data.followers}</h3>`;
+        }
+      };
+
+      xhr.send();
+    </script>
+  </body>
+</html>

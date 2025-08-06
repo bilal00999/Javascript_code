@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        .html{
+            font-size: 62.5%;
+        }
+        body{
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+        }
+        .maindiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width:35rem;
+            height:15rem ;
+            background-color: gray;
+            margin-top: 10rem;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 20px yellow;
+
+            border-bottom: 4px solid yellow;
+        }
+        #clock{
+            font-size: 5rem;
+            text-align: center;
+            color: rgb(245, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <main class="maindiv">
+        <div class="box">
+            <p id="clock"></p>
+        </div>
+    </main>
+
+    <script>
+        
+        // const callTime=()=>{
+        //     let time=new Date().toLocaleTimeString("en-US");
+        //     document.getElementById("clock").innerText=time;
+        // };
+
+        // let clearTime=setInterval(() => {
+        //     callTime();
+        // }, 1000);
+
+        // setInterval(()=>{
+        //     clearInterval(clearTime);
+        // },10000);
+
+        const obj={
+            name:"bilal",
+            age:19,
+            about:"hi i am bilal ahmed",
+        }
+        console.log(obj);
+        obj.job="web dev";
+        console.log(obj);
+        obj.age="";
+        console.log(obj);
+
+        // let obj={
+        //     name:"bilal",
+        //     age:19,
+        // }
+        // let newObj=Object.assign({},obj);
+        // newObj.name="siddiqui";
+        // console.log(newObj);
+        // console.log(obj);
+    </script>
+</body>
+</html>

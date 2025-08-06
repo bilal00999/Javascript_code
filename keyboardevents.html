@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard events in javascript</title>
+    <style>
+        body{
+                background-color: black;
+            .text{
+                width: 300px;
+                height: 30px;
+                border-radius: 10px;
+                /* display: inline-block; */
+            }
+            .inputfield{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 50px;
+            }
+            .displayvalue{
+                width: 300px;
+                height: auto;
+                background-color: gray;
+                position: relative;
+                top: -50%;
+                left: 39%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="inputfield">
+            <input type="text" placeholder="Enter text" class="text">
+        </div>
+        <div class="displayvalue">
+            <p class="keypressed">Key Pressed : </p>
+            <p class="keycode">Key Code :</p>
+            <p class="charcode">Char Code :</p>
+            <p class="keytype">Key Type : </p>
+        </div>
+    </div>
+
+    <script>
+        let inputfield=document.querySelector(".inputfield");
+        let para1=document.querySelector(".keypressed");
+        let para2=document.querySelector(".keycode");
+        let para3=document.querySelector(".charcode");
+        let para4=document.querySelector(".keytype");
+        function keypressed(event){
+            para1.textContent=`key pressed : ${event.key}`;
+            para2.textContent=`key pressed : ${event.code}`;
+            para3.textContent=`key code : ${event.key.charCodeAt(0)}`;
+            para4.textContent=`key pressed : ${event.type}`;
+            // console.log(event);
+        }
+        inputfield.addEventListener("keydown",keypressed);
+    </script>
+</body>
+</html>

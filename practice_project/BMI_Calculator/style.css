@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: white;
+}
+.main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  text-align: center;
+  margin: 2rem 0;
+}
+#weight {
+  display: block;
+  margin: 0.5rem 0 1rem 0;
+}
+#height {
+  display: block;
+  margin: 0.5rem 0 1rem 0;
+}
+.bmi_weight_guide {
+  text-align: center;
+  margin-top: 4rem;
+}
+.para {
+  margin: 0.5rem 0;
+}
+.result {
+  font-size: 25px;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}

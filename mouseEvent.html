@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event in javascript</title>
+    <style>
+        body{
+            background-color: black;
+            html{
+                font-size: 62.5%;
+            }
+            .main{
+                width:100%;
+                height:100%;
+                display: flex;
+                justify-content: center;
+                 align-items:center; 
+            }
+
+            .circle{
+                width: 20rem;
+                height: 20rem;
+                /* border-radius: 50%; */
+                background-color: yellow;
+            }
+            .btn{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            }
+            .mybutton{
+                display: block;
+                margin: 2rem;
+                width: 7rem;
+                height: 2.5rem;
+                background-color: red;
+                color: white;
+                border: 2px solid red;
+                border-radius: 1rem;
+            }
+            .transition1{
+                border-radius: 50%;
+            }
+            .transition2{
+                border-radius: 50%;
+                transform: translate(60%,0);
+            }
+            .transition3{
+                border-radius: 50%;
+                transform: translate(-60%,0);
+            }
+            .transition4{
+                border-radius: 50%;
+                transform: translate(60%,0);
+            }
+            .transition5{
+                border-radius: 50%;
+                transform: translate(0,0);
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="circle">
+
+        </div>
+    </div>
+    <div class="btn">
+        <button class="mybutton">Click Me</button>
+    </div>
+
+    <script>
+        let circle=document.querySelector(".circle");
+        let btn=document.querySelector(".mybutton");
+
+        btn.addEventListener("click",()=>{
+            circle.classList.add("transition1");
+        });
+        btn.addEventListener("dblclick",()=>{
+            circle.classList.add("transition2");
+        });
+        circle.addEventListener("mouseover",()=>{
+            circle.classList.add("transition3");
+        });
+        circle.addEventListener("mousedown",()=>{
+            circle.classList.add("transition4");
+        });
+        circle.addEventListener("mouseup",()=>{
+            circle.classList.add("transition5");
+        });
+    </script>
+</body>
+</html>

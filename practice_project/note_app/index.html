@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+CU:wght@100..400&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1>
+          <span><i class="fa-solid fa-note-sticky"></i></span>Notes App
+        </h1>
+      </div>
+      <div class="add_newnote">
+        <button class="add_newNote_btn">
+          <span><i class="fa-solid fa-plus plus_icon"></i></span>New Note
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="serach_bar">
+        <label class="serach_box">
+          <i class="fa-solid fa-magnifying-glass serach_icon"></i>
+          <input type="search" class="search" placeholder="Search Notes..." />
+        </label>
+      </div>
+
+      <div class="main_content">
+        <div class="no_notes">
+          <div class="notebook_icon">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h2 class="no_note_heading">No notes yet</h2>
+          <p class="no_note_para">Click "New Note" to create your first note</p>
+        </div>
+      </div>
+
+      <div class="create_notes_main">
+        <div class="create_notes_header">
+          <div class="create_notes_left">
+            <p class="bold_text"><i class="fa-solid fa-bold"></i></p>
+            <p class="italic_text"><i class="fa-solid fa-italic"></i></p>
+            <p class="underline_text"><i class="fa-solid fa-underline"></i></p>
+            <input type="color" id="color" />
+          </div>
+
+          <div class="create_notes_right">
+            <button class="add_image">
+              <span><i class="fa-solid fa-images image_icon"></i></span>Add
+              image
+            </button>
+          </div>
+        </div>
+
+        <!-- create notes box -->
+        <form action="">
+          <div class="write_notes_box">
+            <div class="write_notes_title">
+              <input type="text" placeholder="Note title" class="note_title" />
+            </div>
+
+            <div class="write_notes_text">
+              <div class="images_div"></div>
+              <textarea
+                name="note_text"
+                id="note_text"
+                class="note_text"
+                placeholder="Write notes..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="create_note_button">
+            <button class="cancel_btn">Cancel</button>
+            <button class="save_btn">Save Note</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- show notes cards -->
+
+      <div class="show_notes_cards">
+        <!-- <div class="card">
+          <div class="head">
+            <h3 class="card_title">bilal</h3>
+
+            <div class="edit_delete">
+              <i class="fa-solid fa-pen-to-square edit_icon"></i>
+              <i class="fa-solid fa-trash delete_icon"></i>
+            </div>
+          </div>
+          <p class="card_text">hi i am bilal ahmed</p>
+          <img src="image.png" alt="image" class="card_image" />
+          <div class="date_time">
+            <p class="card_date">Aug 4, 2025</p>
+            <p class="card_time">5:10 PM</p>
+          </div>
+        </div> -->
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event delegation project</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .maindiv{
+            margin: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .elements{
+            width: 5.5rem;
+            height: 4rem;
+            border: 2px solid pink;
+            color: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            margin: 1rem;
+        }
+        .elements:hover{
+            color: black;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h1>Periodic Table</h1>
+    <div class="maindiv">
+        <!-- <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div>
+        <div class="element">Elem 1</div> -->
+    </div>
+
+    <script>
+        let mainDiv=document.querySelector(".maindiv");
+        addData();
+
+        function createData(name,atomicNumber,ElemName){
+                let element=document.createElement("div");
+                element.innerHTML=name;
+                element.setAttribute("class","elements");
+                mainDiv.append(element);
+
+                element.setAttribute("data-atomic-number",atomicNumber);
+                element.setAttribute("data-element-name",ElemName);
+        }
+        function addData(){
+
+            for(let i=1;i<=50;i++){
+                createData(`Elem${i}`,i,`Elem${i}`);
+            }
+        }
+
+        function getValue(event){
+            if(event.target.classList.contains("elements")){
+                let atomicNumber=event.target.getAttribute("data-atomic-number");
+                let elemName=event.target.getAttribute("data-element-name");
+                alert(`Atomic Number: ${atomicNumber}\nElement Name: ${elemName}`);
+            }
+            
+        }
+        mainDiv.addEventListener("click",getValue);
+
+        
+    </script>
+</body>
+</html>

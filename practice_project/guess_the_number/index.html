@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess The Number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">Guess The Number</h1>
+      <div class="main_box">
+        <form action="">
+          <input
+            type="Number"
+            name="number"
+            id="guess_number"
+            placeholder="enter number between 1 to 10"
+          />
+          <button class="btn">Submit guess</button>
+          <div class="paras">
+            <p class="previous">
+              Previous guess : <span class="previousnumber">0</span>
+            </p>
+            <p class="remaining">
+              Remaining guesses : <span class="Remainingnumber">10</span>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

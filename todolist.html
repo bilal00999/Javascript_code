@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body{
+            background-color: black;
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                color: white;
+        
+            }
+            .main{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 200px;
+            }
+            #todotext{
+                width: 250px;
+                height: 40px;
+                border-radius: 5px;
+                border: 2px solid black;
+                font-size: 16px;
+                margin-top: 20px;
+                color: black;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+
+            .todobtn{
+                height: 40px;
+                width: 100px;
+                background-color: red;
+                border: 2px solid red;
+                border-radius: 10px;
+                color: white;
+                
+            }
+            .displaytodo{
+                width: 400px;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(2,0.3fr);
+                align-items: center;
+
+
+                position: relative;
+                left: 36%;
+
+            }
+            .tododelbtn{
+                margin-left: 120px;
+                height: 40px;
+                width: 100px;
+                background-color: red;
+                border: 2px solid red;
+                border-radius: 10px;
+                color: white;
+                margin-bottom: 10px;
+            }
+            .todo-li{
+                list-style-type:none ;
+                font-size: 16px; 
+                margin-bottom: 20px;
+            }
+           
+            
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="inputfiled">
+            <h1>Todo List</h1>
+            <input type="text" name="todovalue" id="todotext" placeholder="Enter Text">
+            <button class="todobtn">Add Todo</button>
+        </div>
+    </div>
+    <div class="displaytodo">
+        
+    </div>
+
+    <script>
+        const inputfield = document.querySelector("#todotext");
+        const addBtn = document.querySelector(".todobtn");
+        const displayTodo = document.querySelector(".displaytodo");
+    
+        let todoValue = "";
+        let addLocalStorage = [];
+    
+        // Handle input
+        inputfield.addEventListener("input", (event) => {
+            todoValue = event.target.value;
+        });
+    
+        // Get todos from localStorage
+        const getStorageFromLocal = () => {
+            const stored = JSON.parse(localStorage.getItem("todolist"));
+            addLocalStorage = stored ? stored : [];
+        };
+    
+        // Display todos
+        const showTodo = () => {
+            displayTodo.innerHTML = ""; // Clear previous list
+    
+            addLocalStorage.forEach((curElm, index) => {
+                const list = document.createElement("p");
+                list.setAttribute("class", "todo-li");
+                list.textContent = curElm;
+    
+                const delbtn = document.createElement("button");
+                delbtn.setAttribute("class", "tododelbtn");
+                delbtn.textContent = "Delete";
+    
+                // Delete logic
+                delbtn.addEventListener("click", () => {
+                    addLocalStorage.splice(index, 1); // Remove item from array
+                    localStorage.setItem("todolist", JSON.stringify(addLocalStorage)); // Update storage
+                    showTodo(); // Refresh list
+                });
+    
+                displayTodo.append(list);
+                displayTodo.append(delbtn);
+            });
+        };
+    
+        // Add new todo
+        addBtn.addEventListener("click", () => {
+            const localstore = todoValue.trim();
+            if (localstore === "") return; // Prevent empty values
+    
+            addLocalStorage.push(localstore);
+            addLocalStorage = [...new Set(addLocalStorage)]; // Remove duplicates
+            localStorage.setItem("todolist", JSON.stringify(addLocalStorage));
+    
+            inputfield.value = "";
+            todoValue = "";
+    
+            showTodo(); // Refresh UI
+        });
+    
+        // On page load
+        getStorageFromLocal();
+        showTodo();
+    </script>
+    
+</body>
+</html>
